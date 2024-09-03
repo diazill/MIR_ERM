@@ -33,6 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             btnlogin = new Button();
+            btndaftar = new Button();
             SuspendLayout();
             // 
             // txtusername
@@ -77,11 +78,21 @@
             btnlogin.UseVisualStyleBackColor = true;
             btnlogin.Click += btnlogin_Click;
             // 
+            // btndaftar
+            // 
+            btndaftar.Location = new Point(281, 241);
+            btndaftar.Name = "btndaftar";
+            btndaftar.Size = new Size(94, 29);
+            btndaftar.TabIndex = 5;
+            btndaftar.Text = "Daftar";
+            btndaftar.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(559, 328);
+            Controls.Add(btndaftar);
             Controls.Add(btnlogin);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -100,5 +111,6 @@
         private Label label1;
         private Label label2;
         private Button btnlogin;
+        private Button btndaftar;
     }
 }
