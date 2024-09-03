@@ -99,7 +99,7 @@
             Controls.Add(txtpass);
             Controls.Add(txtusername);
             Name = "LoginForm";
-            Text = "Login Form";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }
