@@ -86,6 +86,7 @@
             btndaftar.TabIndex = 5;
             btndaftar.Text = "Daftar";
             btndaftar.UseVisualStyleBackColor = true;
+            btndaftar.Click += btndaftar_Click;
             // 
             // LoginForm
             // 

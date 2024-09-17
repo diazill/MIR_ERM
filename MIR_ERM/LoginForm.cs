@@ -11,7 +11,7 @@ namespace MIR_ERM
         public LoginForm()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+            connectionString = GlobalConfig.ConnectionString;
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
@@ -30,14 +30,17 @@ namespace MIR_ERM
                 {
                     connection.Open();
 
-                    using (SqlCommand cmd = new SqlCommand(Query,connection))
+                    using (SqlCommand cmd = new SqlCommand(Query, connection))
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
-                        while (reader.Read()) {
+                        while (reader.Read())
+                        {
                             hasil = reader["namaserver"] != DBNull.Value ? reader["namaserver"].ToString() : string.Empty;
                         }
                     }
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
@@ -46,7 +49,17 @@ namespace MIR_ERM
 
             MessageBox.Show(hasil);
 
-            
+            Home.Home f = new Home.Home();
+            f.Show();
+            this.Hide();
+
+
+        }
+
+        private void btndaftar_Click(object sender, EventArgs e)
+        {
+            RegisterForm form = new RegisterForm();
+            form.ShowDialog();
         }
     }
 }
